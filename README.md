@@ -29,7 +29,7 @@ Expected result: Please enter a valid email address.
 
 
 ### 3. Short Password Test
-1. Enter a valid email such as: test@test.com
+1. Enter a valid email such as: `test@test.com`
 2. Enter a password shorter than 8 characters (example: `12345`).
 3. Click **Login**.
 
@@ -37,7 +37,7 @@ Expected result: Password must be at least 8 characters.
 
 
 ### 4. Valid Input Test
-1. Enter a valid email such as: test@test.com
+1. Enter a valid email such as: `test@test.com`
 2. Enter a password with at least 8 characters (example: `password123`).
 3. Click **Login**.
 
