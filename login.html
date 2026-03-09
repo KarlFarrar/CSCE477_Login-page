@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juice Shop Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6b6b;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff4a4a;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+    <h2>Juice Shop Login</h2>
+
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit">Login</button>
+        <p class="error" id="errorMessage"></p>
+    </form>
+</div>
+
+<script>
+function validateLogin(event) {
+    event.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let errorMessage = document.getElementById("errorMessage");
+
+    errorMessage.textContent = "";
+
+    // Check for empty fields
+    if (email === "" || password === "") {
+        errorMessage.textContent = "Both fields are required.";
+        return false;
+    }
+
+    // Check if email contains "@"
+    if (!email.includes("@")) {
+        errorMessage.textContent = "Please enter a valid email address.";
+        return false;
+    }
+
+    // Check password length
+    if (password.length < 8) {
+        errorMessage.textContent = "Password must be at least 8 characters.";
+        return false;
+    }
+
+    alert("Login successful (demo)");
+    return true;
+}
+
+document.getElementById("loginForm").addEventListener("submit", validateLogin);
+</script>
+
+</body>
+</html>
